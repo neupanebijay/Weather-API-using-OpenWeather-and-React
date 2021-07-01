@@ -9,7 +9,7 @@ export const WeatherAPI = () => {
     useEffect(() => {
         const fetchApi = async() =>{
 
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=metric&appid=f7511031bba5bf544a2460d03437fc36`;
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=metric&appid=${process.env.REACT_APP_APIKEY}`;
             const response = await fetch(url);
             const respJson = await response.json();
             setCity(respJson.main)
